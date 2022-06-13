@@ -1,0 +1,32 @@
+{
+  "name": "node-ejs",
+  "main": "server.js",
+  "dependencies": {
+    "ejs": "^3",
+    "express": "^4",
+    "nodemon": "*",
+    "bulma": "^0.9.4",
+    "node-sass": "^7.0.1"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "./",
+      "src",
+      "config",
+      "package.json"
+    ],
+    "ext": "ts,js,json,coffee,scss",
+    "ignore": [
+      "*.test.ts"
+    ],
+    "delay": "1000",
+    "execMap": {
+      "ts": "ts-node"
+    }
+  },
+  "scripts": {
+    "start": "nodemon -e sass,scss,js,ejs,json -x \"npm run build-css; node server.js\"",
+    "build-css": "node-sass sass/mystyles.scss public/css/mystyles.css",
+    "css-watch": "npm run css-build -- --watch"
+  }
+}
