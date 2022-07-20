@@ -14,7 +14,7 @@ $primary-dark: findDarkColor($primary);
 $primary-invert: findColorInvert($primary);
 
 $body-background: whitesmoke;
-$body-background-color: #0cc;
+$body-background-color: whitesmoke;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
@@ -93,4 +93,4 @@ $link-focus-border: $primary;
 @import "node_modules/bulma/sass/elements/_all.sass";
 @import "node_modules/bulma/sass/form/_all.sass";
 @import "node_modules/bulma/sass/helpers/_all.sass";
-@import "node_modules/bulma-prefers-dark/bulma-prefers-dark.sass";
+//@import "node_modules/bulma-prefers-dark/bulma-prefers-dark.sass";
