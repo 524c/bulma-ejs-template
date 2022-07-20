@@ -1,0 +1,17 @@
+dist
+build
+logs
+yarn-error.log
+pnpm-lock.yaml
+yarn.lock
+.env
+_.env
+.cert
+.certs
+ssl
+tsconfig.example.json
+.DS_Store
+src/.DS_Store
+src/*/.DS_Store
+*.log
+node_modules
