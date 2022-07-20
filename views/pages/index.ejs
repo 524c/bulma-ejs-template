@@ -1,46 +1,59 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <%- include('../partials/head'); %>
-  </head>
 
-  <body id="body" style="display: none">
-    <section class="hero is-fullheight is-default is-bold">
-      <header><%- include('../partials/header'); %></header>
+  <!DOCTYPE html>
+  <html>
 
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <div class="columns is-vcentered">
-            <div class="column is-5">
-              <figure class="image is-4by3">
-                <img id="pic" alt="Description" />
-              </figure>
+    <head>
+      <%- include('../partials/head'); %>
+    </head>
+
+    <body id="home" style="display: none">
+      <section class="hero is-fullheight is-default is-bold">
+        <header>
+          <%- include('../partials/header-onepage'); %>
+        </header>
+
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <div class="columns is-vcentered">
+              <div class="column is-5">
+                <figure class="image is-4by3">
+                  <img id="pic" alt="Description" />
+                </figure>
+              </div>
+              <div class="column is-6 is-offset-1">
+                <h1 class="title is-2">Superhero Scaffolding</h1>
+                <h2 class="subtitle is-4">
+                  Let this cover page describe a product or service.
+                </h2>
+                <br />
+                <p class="has-text-centered">
+                  <a class="button is-medium is-info is-outlined"> Learn more </a>
+                </p>
+                <br>
+                <button class="button is-orange">Orange</button>
+              </div>
             </div>
-            <div class="column is-6 is-offset-1">
-              <h1 class="title is-2">Superhero Scaffolding</h1>
-              <h2 class="subtitle is-4">
-                Let this cover page describe a product or service.
-              </h2>
-              <br />
-              <p class="has-text-centered">
-                <a class="button is-medium is-info is-outlined"> Learn more </a>
-              </p>
-              <button class="button is-orange">Orange</button>
+            <br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br>
+            <div id="about">
+              <h1>About content</h1>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="hero-foot"><%- include('../partials/footer'); %></div>
-    </section>
-    <script src="../js/bulma.js"></script>
-  </body>
-</html>
+        <div class="hero-foot">
+          <%- include('../partials/footer'); %>
+        </div>
+      </section>
+      <script src="../js/bulma.js"></script>
+    </body>
 
-<script type="text/javascript">
-  window.onload = enableBody
+  </html>
 
-  var myPix = new Array(
+  <script type="text/javascript">
+    window.onload = enableBody
+
+  var myPic = new Array(
     'pic1.jpeg',
     'pic2.jpeg',
     'pic3.jpeg',
@@ -50,10 +63,10 @@
   )
 
   function enableBody() {
-    randomNum = Math.floor(Math.random() * myPix.length)
-    document.getElementById('pic').src = '/img/' + myPix[randomNum]
+    randomNum = Math.floor(Math.random() * myPic.length)
+    document.getElementById('pic').src = '/img/' + myPic[randomNum]
 
-    const pic = document.getElementById('body')
+    const pic = document.getElementById('home')
     pic.removeAttribute('style')
   }
-</script>
+  </script>

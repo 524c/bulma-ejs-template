@@ -2,11 +2,11 @@
   "name": "node-ejs",
   "main": "server.js",
   "dependencies": {
+    "bulma": "^0.9.4",
     "ejs": "^3",
     "express": "^4",
-    "nodemon": "*",
-    "bulma": "^0.9.4",
-    "node-sass": "^7.0.1"
+    "node-sass": "^7.0.1",
+    "nodemon": "*"
   },
   "nodemonConfig": {
     "watch": [
@@ -28,5 +28,8 @@
     "start": "nodemon -e sass,scss,js,ejs,json -x \"npm run build-css; node server.js\"",
     "build-css": "node-sass sass/mystyles.scss public/css/mystyles.css",
     "css-watch": "npm run css-build -- --watch"
+  },
+  "devDependencies": {
+    "bulma-prefers-dark": "0.1.0-beta.1"
   }
 }

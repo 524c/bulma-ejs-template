@@ -1,51 +1,96 @@
 @charset "utf-8";
+@import "node_modules/bulma/sass/utilities/_all.sass";
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
 
-// Import a Google Font
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+// Set your colors -------------------------------------------------
+$primary: #2c9880;
+$secondary: $primary;
+$info: #ccc;
 
-// Set your brand colors
-$purple: #8A4D76;
-$pink: #FA7C91;
-$brown: #757763;
-$beige-light: #D0D1CD;
-$beige-lighter: #EFF0EB;
-$blue: #72d0eb;
+$primary-light: findLightColor($primary);
+$primary-dark: findDarkColor($primary);
+$primary-invert: findColorInvert($primary);
 
-// Update Bulma's global variables
-$family-sans-serif: "Nunito", sans-serif;
-$grey-dark: $brown;
-$grey-light: $beige-light;
-$primary: $purple;
-$secondary: $pink;
-$white: #FFFFFF;
-$link: $pink;
-$widescreen-enabled: true;
-$fullhd-enabled: true;
-
-// Update some of Bulma's component variables
-$body-background-color: $beige-lighter;
+$body-background: whitesmoke;
+$body-background-color: #0cc;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 
-$orange: #ff8606;
-$orange-invert: findColorInvert($orange);
-$blue-invert: findColorInvert($blue);
-$pink-invert: findColorInvert($pink);
+$custom-colors: null !default;
+$custom-shades: null !default;
+// -----------------------------------------------------------------
 
-$custom-colors: (
-  "orange": ($orange, $orange-invert),
-  "blue": ($blue, $blue-invert),
-  "pink": ($pink, $pink-invert)
+$colors: mergeColorMaps(
+  (
+    "white": (
+      $white,
+      $black,
+    ),
+    "black": (
+      $black,
+      $white,
+    ),
+    "light": (
+      $light,
+      $light-invert,
+    ),
+    "dark": (
+      $dark,
+      $dark-invert,
+    ),
+    "primary": (
+      $primary,
+      $primary-invert,
+      $primary-light,
+      $primary-dark,
+    ),
+    "link": (
+      $link,
+      $link-invert,
+      $link-light,
+      $link-dark,
+    ),
+    "info": (
+      $info,
+      $info-invert,
+      $info-light,
+      $info-dark,
+    ),
+    "success": (
+      $success,
+      $success-invert,
+      $success-light,
+      $success-dark,
+    ),
+    "warning": (
+      $warning,
+      $warning-invert,
+      $warning-light,
+      $warning-dark,
+    ),
+    "danger": (
+      $danger,
+      $danger-invert,
+      $danger-light,
+      $danger-dark,
+    ),
+  ),
+  $custom-colors
 );
 
-// 1. Import the initial variables
-@import "../node_modules/bulma/sass/base/_all.sass";
-@import "../node_modules/bulma/sass/utilities/_all.sass";
-@import "../node_modules/bulma/sass/layout/_all.sass";
-@import "../node_modules/bulma/sass/grid/_all.sass";
-@import "../node_modules/bulma/sass/components/_all.sass";
-@import "../node_modules/bulma/sass/elements/_all.sass";
-@import "../node_modules/bulma/sass/form/_all.sass";
-@import "../node_modules/bulma/sass/helpers/_all.sass";
+// Links
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
+
+@import "node_modules/bulma/sass/base/_all.sass";
+@import "node_modules/bulma/sass/layout/_all.sass";
+@import "node_modules/bulma/sass/grid/_all.sass";
+@import "node_modules/bulma/sass/components/_all.sass";
+@import "node_modules/bulma/sass/elements/_all.sass";
+@import "node_modules/bulma/sass/form/_all.sass";
+@import "node_modules/bulma/sass/helpers/_all.sass";
+@import "node_modules/bulma-prefers-dark/bulma-prefers-dark.sass";
